@@ -1,11 +1,12 @@
 <div class="nav-bar">
-    
-
+    <div class="card logo">
+        <img src="../../../assets/Logo1.svg" width="70px" alt="">
+    </div>
 
     <div class="card">
-        <ul class="nav">
+        <ul class="nav" [ngClass]="{'show': isMenuOpen}">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page">Home</a>
+                <a class="nav-link active">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Resume</a>
@@ -18,18 +19,8 @@
             </li>
         </ul>
 
-        <button class="hamburger" aria-label="Abrir Menu">
-            &#9776; <!-- símbolo do hamburger -->
+        <button class="hamburger" aria-label="Abrir Menu" (click)="toggleMenu()">
+            &#9776;
         </button>
     </div>
-
-    <div class="card logo">
-        <div class="flex flex-wrap gap-8">
-            <div class="flex-auto">
-                <img src="../../../assets/Logo1.svg" width="70px" alt="">
-            </div>
-        </div>
-    </div>
-
-
 </div>

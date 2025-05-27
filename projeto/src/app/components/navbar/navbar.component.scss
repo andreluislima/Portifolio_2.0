@@ -1,33 +1,54 @@
 @use "../../styles/variables.scss" as *;
 
-.nav-bar{
-    border: 1px dashed blue; 
-    width: 1320px;
-    height: 72px;
+.nav-bar {
+    border: 2px solid blu;
+     width: 100%;
+    padding: 1rem 2rem; // ou menos, se quiser mais colado
     display: flex;
-    align-items: center;
-    flex-direction:row-reverse;
+    // flex-direction: row-reverse;
     justify-content: space-between;
+    align-items: center;
 
-        
-    .card{
-        border:none;
-        border: 1px dashed blue;
+    .card {
         display: flex;
-        flex-direction: row;
-        .nav{
-            //  border: 1px dashed blue;
-            .nav-link{
-                // border: 1px dashed blue;
-                color: $fourth-color;
-                font-weight: 600;
+        align-items: center;
+
+        .nav {
+            display: flex;
+            gap: 1rem;
+
+            // Por padrão, visível
+            @media (max-width: 768px) {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background-color: white;
+                width: 100%;
+                padding: 1rem;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            &.show {
+                display: flex; // Sem necessidade de !important
+            }
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+
+            @media (max-width: 768px) {
+                display: block;
             }
         }
     }
-    .nav{
-        // background-color: red;
-    }
-
-
 }
+
+
+
 
